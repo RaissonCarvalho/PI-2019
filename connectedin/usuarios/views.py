@@ -6,7 +6,7 @@ from perfis.models import Perfil
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 
-
+@transaction.atomic
 class RegistrarUsuarioView(View):
 
     template_name = 'registrar.html'
@@ -29,12 +29,13 @@ class RegistrarUsuarioView(View):
                             usuario=usuario)
             perfil.save()
 
-
             return redirect('index')
 
         return render(request, self.template_name, {'form':form})
 
 
+@login_required
+@transaction.atomic
 class ChangePasswordView(View):
     template_name = 'change_password.html'
 

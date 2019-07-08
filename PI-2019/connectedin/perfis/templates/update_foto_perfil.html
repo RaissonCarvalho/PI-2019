@@ -1,9 +1,0 @@
-{% extends 'base_usuario.html' %}
-{% block body %}
-    <form action="{% url 'update_photo' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <hr/>
-        <button type="submit">Salvar</button>
-    </form>
-{% endblock %}

@@ -20,6 +20,7 @@ from django.urls import path
 from perfis import views as perfis_views
 from usuarios import views as usuarios_views
 from django.contrib.auth import views as v
+from usuarios.views import RegistrarUsuarioView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,11 +30,12 @@ urlpatterns = [
     path('convite/<int:convite_id>/aceitar',perfis_views.aceitar, name='aceitar'),
     path('convite/<int:convite_id>/recusar',perfis_views.recusar, name='recusar'),
     path('perfil/<int:perfil_id>/desfazer', perfis_views.desfazer_amizade, name='desfazer_amizade'),
-    path('registrar/', usuarios_views.RegistrarUsuarioView.as_view(), name='registrar'),
+    path('registrar/', RegistrarUsuarioView.as_view(), name = 'registrar'),
     path('login/', v.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', v.LogoutView.as_view(template_name='login.html'), name='logout'),
     path('desativar_perfil/',perfis_views.desativar_perfil, name='desativar'),
     path('update_photo/', perfis_views.MudarFotoPerfil, name='update_photo'),
+    path('change_password', usuarios_views.ChangePassword, name='change_password')
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

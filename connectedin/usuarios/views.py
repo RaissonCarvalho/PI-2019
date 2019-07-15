@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
-from django.views.generic.base import View
 from usuarios.forms import RegistrarUsuarioForm
 from django.contrib.auth.models import User
 from perfis.models import Perfil
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
+from django.views.generic.base import View
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 
-@transaction.atomic
+
 class RegistrarUsuarioView(View):
 
     template_name = 'registrar.html'
@@ -15,6 +17,7 @@ class RegistrarUsuarioView(View):
         return render(request, self.template_name)
 
 
+    @transaction.atomic()
     def post(self, request):
         form = RegistrarUsuarioForm(request.POST)
         if form.is_valid():
@@ -34,16 +37,18 @@ class RegistrarUsuarioView(View):
         return render(request, self.template_name, {'form':form})
 
 
-@login_required
-@transaction.atomic
-class ChangePasswordView(View):
-    template_name = 'change_password.html'
 
-    def get(self, request):
-        return render(request, self.template_name)
+def ChangePassword(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
 
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('index')
 
-    def post(self, request):
-        return render(request, self.template_name)
+    if request.method == 'GET':
+        form = PasswordChangeForm(user=request.user)
+        args = {'form': form}
 
-
+        return render(request, 'change_password.html', args)

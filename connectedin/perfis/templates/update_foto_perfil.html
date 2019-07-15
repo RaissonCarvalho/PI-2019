@@ -2,8 +2,10 @@
 {% block body %}
     <form action="{% url 'update_photo' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_table }}
         <hr/>
         <button type="submit">Salvar</button>
+
+        {% if form.errors %}
     </form>
 {% endblock %}

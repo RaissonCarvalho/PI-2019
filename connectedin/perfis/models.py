@@ -39,17 +39,6 @@ class Perfil(models.Model):
 
 
 
-    def foi_convidado(self, perfil):
-        if Convite.objects.filter(solicitante=self, convidado=perfil).exists() or Convite.objects.filter(solicitante=perfil, convidado=self).exists():
-            if Convite.objects.get(solicitante=perfil, convidado=self):
-                return True
-            else:
-                return False
-        else:
-            return False
-
-
-
 class Convite(models.Model):
     solicitante = models.ForeignKey(Perfil,
                                     on_delete=models.CASCADE,
@@ -67,3 +56,25 @@ class Convite(models.Model):
 
     def recusar(self):
         self.delete()
+
+
+class Post(models.Model):
+    texto = models.TextField(null=False)
+    data = models.DateTimeField(auto_now_add=True, null=False)
+    perfil = models.ForeignKey('Perfil',
+                               on_delete=models.CASCADE,
+                               related_name='posts')
+    foto = models.ImageField(upload_to='posts_photo', blank=True)
+
+
+class TimeLine(models.Model):
+    perfil = models.OneToOneField('Perfil',
+                                  related_name='my_timeline',
+                                  null=True,
+                                  on_delete=models.CASCADE)
+
+    def exibicao(self):
+        perfis = [perfil.id for perfil in self.perfil.contatos.all()]
+        perfis.append(self.perfil.id)
+        posts = Post.objects.filter(perfil__in= perfis).order_by('-data')
+        return posts

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block body %}
 
-    <div class="col-3" style="background: wheat">
+    <div class="col-3" style="background: #b8daff">
         <div class="card">
             {% with total_de_contatos=perfil_logado.contatos.count %}
                 {% if total_de_contatos %}
-                    <div class="card-header">
-                        <strong>Voce tem {{ total_de_contatos }} contato{{ total_de_contatos|pluralize }}</strong>
+                    <div class="card-header text-center">
+                        <strong>Amigos</strong>
                     </div>
                     {% for contato in perfil_logado.contatos.all %}
                         {% if contato.usuario.is_active %}
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="col-6" style="background: #b8daff">
+    <div class="col-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <strong>Todos os Perfis</strong>
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <div class="col-3" style="background: burlywood">
+    <div class="col-3" style="background: #b8daff">
         <div class="panel panel-default">
             {% if perfil_logado.convites_recebidos.count %}
                 <div class="panel-heading">

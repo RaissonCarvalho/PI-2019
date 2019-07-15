@@ -12,11 +12,11 @@
         <property name="enable_load_extension" value="true" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="db" uuid="a120cf8d-ef4b-4f8d-ab94-3575f81ba211">
+    <data-source source="LOCAL" name="db [2]" uuid="2ff038d5-84c5-40ce-afac-e14b84b6285b">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\enriq\Dropbox\Progamação-Internet -I-2019.1\PI-2019\connectedin\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Raisson\Documents\ADS\3º Período\Programação para Internet\connectedin.por_fazer\PI-2019\connectedin\db.sqlite3</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>

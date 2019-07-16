@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block body %}
 
-    <div class="col-3" style="background: #b8daff">
-        <div class="card">
+    <div class="col-3">
+        <div class="card" style="background: #b8daff">
             {% with total_de_contatos=perfil_logado.contatos.count %}
                 {% if total_de_contatos %}
                     <div class="card-header text-center">
@@ -11,7 +11,11 @@
                     {% for contato in perfil_logado.contatos.all %}
                         {% if contato.usuario.is_active %}
                             <ul class="list-group list-group-flush">
-                                <li href="{% url 'exibir' contato.id%}" class="list-group-item">{{ contato.nome }} // {{ contato.email }}</li>
+                                <li>
+                                    <a href="{% url 'exibir' contato.id%}" class="list-group-item">
+                                        {{ contato.nome }} // {{ contato.email }}
+                                    </a>
+                                </li>
                             </ul>
                         {% endif %}
                     {% endfor %}
@@ -26,24 +30,28 @@
 
     <div class="col-6">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <strong>Todos os Perfis</strong>
+            <div class="panel-heading text-center">
+                <strong>Timeline</strong>
             </div>
-            {% if perfis %}
-                <ul>
-                    {% for perfil in perfis %}
-                        {% if perfil.usuario.is_active %}
-                            <li>
-                                <a href="{% url 'exibir' perfil.id %}">
-                                    {{ perfil.nome }}
-                                </a> / {{ perfil.email }}
-                            </li>
-                        {% endif %}
+            <div>
+                {% if timeline_my_posts %}
+                    {% for post in timeline_my_posts %}
+                        <div class="card card-body">
+                            <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
+                            {% if perfil_logado == post.perfil %}
+                                <a href="#">Excluir post</a><hr/>
+                            {% endif %}
+                            {% if post.foto %}
+                                {{ post.texto }}
+                                <img src="{{ post.foto.url }}">
+                            {% else %}
+                                {{ post.texto }}
+                            {% endif %}
+                        </div>
                     {% endfor %}
-                </ul>
-            {% else %}
-                <p>Nenhum Perfil encontrado</p>
-            {% endif %}
+                {% endif %}
+                <a href="{% url 'novo_post' %}">Novo post</a>
+            </div>
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from usuarios.forms import RegistrarUsuarioForm
 from django.contrib.auth.models import User
-from perfis.models import Perfil
+from perfis.models import Perfil, TimeLine
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import View
@@ -32,12 +32,16 @@ class RegistrarUsuarioView(View):
                             usuario=usuario)
             perfil.save()
 
+            timeline = TimeLine(perfil_id=perfil.id)
+            timeline.save()
+
             return redirect('index')
 
         return render(request, self.template_name, {'form':form})
 
 
-
+@login_required()
+@transaction.atomic()
 def ChangePassword(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)

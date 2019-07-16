@@ -7,5 +7,10 @@
         <button type="submit">Salvar</button>
 
         {% if form.errors %}
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
     </form>
 {% endblock %}

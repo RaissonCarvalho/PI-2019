@@ -35,7 +35,8 @@ urlpatterns = [
     path('logout/', v.LogoutView.as_view(template_name='login.html'), name='logout'),
     path('desativar_perfil/',perfis_views.desativar_perfil, name='desativar'),
     path('update_photo/', perfis_views.MudarFotoPerfil, name='update_photo'),
-    path('change_password', usuarios_views.ChangePassword, name='change_password')
+    path('change_password', usuarios_views.ChangePassword, name='change_password'),
+    path('novo_post/', perfis_views.novo_post, name='novo_post'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

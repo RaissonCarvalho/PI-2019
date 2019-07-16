@@ -60,21 +60,21 @@ class Convite(models.Model):
 
 class Post(models.Model):
     texto = models.TextField(null=False)
-    data = models.DateTimeField(auto_now_add=True, null=False)
+    data = models.DateTimeField(auto_now_add=True)
     perfil = models.ForeignKey('Perfil',
                                on_delete=models.CASCADE,
                                related_name='posts')
-    foto = models.ImageField(upload_to='posts_photo', blank=True)
+    foto = models.ImageField(upload_to='posts_fotos', blank=True, null=True)
+
+    def excluir_post(self):
+        self.delete()
 
 
 class TimeLine(models.Model):
-    perfil = models.OneToOneField('Perfil',
-                                  related_name='my_timeline',
-                                  null=True,
-                                  on_delete=models.CASCADE)
+    perfil = models.OneToOneField('Perfil', related_name='my_timeline', null=True, on_delete=models.CASCADE)
 
     def exibicao(self):
         perfis = [perfil.id for perfil in self.perfil.contatos.all()]
         perfis.append(self.perfil.id)
-        posts = Post.objects.filter(perfil__in= perfis).order_by('-data')
+        posts = Post.objects.filter(perfil__in=perfis).order_by('-data')
         return posts

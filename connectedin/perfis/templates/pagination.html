@@ -1,7 +1,7 @@
 {% if posts.has_other_pages %}
 <div class="col-lg-6 text-center pagination-set">
     <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-lg-end">
+        <ul class="pagination justify-content-lg-start">
             {% if posts.has_previous %}
             <li class="page-item">
                 <a class="page-link" href="?page={{ posts.previous_page_number }}">{{ posts.previous_page_number }}</a>

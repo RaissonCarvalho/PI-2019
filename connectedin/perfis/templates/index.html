@@ -20,15 +20,18 @@
                         {% endif %}
                     {% endfor %}
                 {% else %}
-                    <div class="panel-body">
-                        <p>Você não possui contatos no momento</p>
+                    <div class="card" style="background: #ffffff">
+                        <div class="card-header text-center">
+                            <strong>Sem Amigos</strong>
+                        </div>
+
                     </div>
                 {% endif %}
             {% endwith %}
         </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-6 border bg-light">
         <div class="panel panel-default">
             <div class="panel-heading text-center">
                 <strong>Timeline</strong>
@@ -46,20 +49,21 @@
                             {% endif %}
                         </div>
                         {% if perfil_logado == post.perfil %}
-                            <a href="{% url 'exluir_post' post.id %}">Excluir post</a><hr/>
+                            <a href="{% url 'exluir_post' post.id %}">Excluir post</a>
                         {% endif %}
+                        <hr/>
                     {% endfor %}
                 {% endif %}
-                <a href="{% url 'novo_post' %}" class="text-center">Novo post</a>
+                <p class="text-center" style="margin-top: 30px"><a href="{% url 'novo_post' %}">Novo post</a></p>
             </div>
         {% include 'pagination.html' %}
         </div>
     </div>
 
-    <div class="col-3" style="background: #b8daff">
-        <div class="panel panel-default">
+    <div class="col-3">
+        <div class="card" style="background: #b8daff">
             {% if perfil_logado.convites_recebidos.count %}
-                <div class="panel-heading">
+                <div class="card-header text-center">
                     <strong>Você tem {{ perfil_logado.convites_recebidos.count }} convite{{ perfil_logado.convites_recebidos.count|pluralize }} aguardando aprovação</strong>
                 </div>
                 <ul class="list-group">
@@ -74,9 +78,11 @@
                     {% endfor %}
                 </ul>
             {% else %}
-                <div class="panel-body">
-                    <p>Nenhum convite recebido</p>
-                </div>
+               <div class="card" style="background: #ffffff">
+                   <div class="card-header text-center">
+                       <strong>Sem Convites</strong>
+                   </div>
+               </div>
             {% endif %}
         </div>
     </div>

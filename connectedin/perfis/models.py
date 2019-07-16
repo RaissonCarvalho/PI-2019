@@ -37,6 +37,9 @@ class Perfil(models.Model):
     def tem_convite(self, perfil):
         return (Convite.objects.filter(solicitante=self, convidado=perfil).exists() or Convite.objects.filter(solicitante=perfil, convidado=self).exists())
 
+    def get_perfil_posts(self):
+        posts = Post.objects.filter(perfil=self)
+        return posts
 
 
 class Convite(models.Model):

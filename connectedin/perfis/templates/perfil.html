@@ -1,33 +1,59 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block body %}
-	<div class="row">
-        <div class="col-lg-12">
-            <h2 style="margin-top:0">{{ perfil.nome }}</h2>
-            {% if perfil == perfil_logado %}
-                <a href="{% url 'update_photo' %}"><img src="{{ perfil_logado.photo.url }}" width="200px"></a>
-            {% else %}
-                <img src="{{ perfil.photo.url }}" width="200px">
-            {% endif %}
-            <address>
-                <strong>{{ perfil.nome_empresa }}</strong><br/>
-                <abbr title="Telefone">Tel: </abbr>{{ perfil.telefone }}<br/>
-                <a href="mailto:{{ perfil.email }}">{{ perfil.email }}</a>
-            </address>
-            {% if perfil == perfil_logado %}
-                <div class="pull-left">
-                    <a href="{% url 'desativar' %}" class="btn btn-danger">Desativar perfil</a>
-                </div>
-            {% else %}
-                {% if ja_eh_contato %}
-                    <div class="well well-sm">Vocês estão conectados!</div>
-                    <a href="{% url 'desfazer_amizade' perfil.id %}" class="btn btn-danger" role="button">Desfazer amizade</a>
-                {% elif tem_convite %}
-                    <a class="btn btn-primary" >Aguardando aprovação</a>
-                 {% else %}
-                    <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
+	<div class="col-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 style="margin-top:0">{{ perfil.nome }}</h2>
+                {% if perfil == perfil_logado %}
+                    <a href="{% url 'update_photo' %}"><img src="{{ perfil_logado.photo.url }}" width="200px"></a>
+                {% else %}
+                    <img src="{{ perfil.photo.url }}" width="200px">
+                {% endif %}
+                <address>
+                    <strong>{{ perfil.nome_empresa }}</strong><br/>
+                    <abbr title="Telefone">Tel: </abbr>{{ perfil.telefone }}<br/>
+                    <a href="mailto:{{ perfil.email }}">{{ perfil.email }}</a>
+                </address>
+                {% if perfil == perfil_logado %}
+                    <div class="pull-left">
+                        <a href="{% url 'desativar' %}" class="btn btn-danger">Desativar perfil</a>
+                    </div>
+                {% else %}
+                    {% if ja_eh_contato %}
+                        <div class="well well-sm">Vocês estão conectados!</div>
+                        <a href="{% url 'desfazer_amizade' perfil.id %}" class="btn btn-danger" role="button">Desfazer amizade</a>
+                    {% elif tem_convite %}
+                        <a class="btn btn-primary" >Aguardando aprovação</a>
+                    {% else %}
+                        <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
                 {% endif %}
             {% endif %}
+            </div>
         </div>
+    </div>
+    <div class="col-6 border bg-light">
+        <div>
+            {% if posts %}
+                {% for post in posts %}
+                    <div class="card card-body">
+                        <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
+                        {% if post.foto %}
+                            {{ post.texto }}
+                            <img src="{{ post.foto.url }}">
+                        {% else %}
+                            {{ post.texto }}
+                        {% endif %}
+                    </div>
+                    {% if perfil_logado == post.perfil %}
+                        <a href="{% url 'exluir_post' post.id %}">Excluir post</a><hr/>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            {% if perfil_logado == perfil %}
+                <p class="text-center"><a href="{% url 'novo_post' %}">Novo post</a></p>
+            {% endif %}
+        </div>
+        {% include 'pagination.html' %}
     </div>
 {% endblock %}

@@ -32,10 +32,21 @@ def exibir_perfil(request, perfil_id):
 
     tem_convite = perfil.tem_convite(perfil_logado)
 
+    timeline_my_posts = perfil.get_perfil_posts()
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(timeline_my_posts, 5)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     return render(request, 'perfil.html', {'perfil' : perfil,
                                            'perfil_logado' : perfil_logado,
                                            'ja_eh_contato': ja_eh_contato,
-                                           'tem_convite': tem_convite})
+                                           'tem_convite': tem_convite, 'posts': posts})
 
 
 @transaction.atomic()
@@ -117,6 +128,9 @@ def novo_post(request):
 
     return render(request, 'novo_post.html', {'form': form, 'perfil_logado': perfil_logado})
 
+
+@login_required()
+@transaction.atomic()
 def excluir_post(request, post_id):
     post = Post.objects.get(id=post_id)
     post.excluir_post()

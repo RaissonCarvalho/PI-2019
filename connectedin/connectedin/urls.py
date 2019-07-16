@@ -37,6 +37,7 @@ urlpatterns = [
     path('update_photo/', perfis_views.MudarFotoPerfil, name='update_photo'),
     path('change_password', usuarios_views.ChangePassword, name='change_password'),
     path('novo_post/', perfis_views.novo_post, name='novo_post'),
+    path('excluir_post/<int:post_id>', perfis_views.excluir_post, name='exluir_post'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -7,16 +7,8 @@
     <list default="true" id="f548ed05-c14d-46de-9f97-7f9c1bbed95b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connectedin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/connectedin/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perfis/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/templates/update_foto_perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/update_foto_perfil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perfis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,14 +51,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perfis/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+            <state relative-caret-position="432">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
               <folding>
-                <element signature="e#94#121#0#HTML" expanded="true" />
-                <element signature="e#1873#1900#0#HTML" expanded="true" />
+                <element signature="e#2468#2475#0#HTML" expanded="true" />
+                <element signature="e#2916#2923#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectedin/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="39" column="86" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="86" />
+              <folding>
+                <element signature="e#635#667#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,17 +79,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="75">
               <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/perfis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="11" column="60" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="60" />
+            <state relative-caret-position="585">
+              <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -105,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perfis/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state relative-caret-position="1156">
+              <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -152,17 +156,17 @@
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/contrib/auth/forms.py" />
         <option value="$PROJECT_DIR$/usuarios/forms.py" />
         <option value="$PROJECT_DIR$/perfis/templates/update_foto_perfil.html" />
-        <option value="$PROJECT_DIR$/connectedin/urls.py" />
         <option value="$PROJECT_DIR$/usuarios/templates/change_password.html" />
         <option value="$PROJECT_DIR$/perfis/forms.py" />
         <option value="$PROJECT_DIR$/perfis/static/styles/main.css" />
         <option value="$PROJECT_DIR$/perfis/templates/base.html" />
-        <option value="$PROJECT_DIR$/perfis/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/usuarios/views.py" />
         <option value="$PROJECT_DIR$/perfis/templates/novo_post.html" />
         <option value="$PROJECT_DIR$/perfis/models.py" />
         <option value="$PROJECT_DIR$/perfis/templates/index.html" />
+        <option value="$PROJECT_DIR$/connectedin/urls.py" />
+        <option value="$PROJECT_DIR$/perfis/views.py" />
       </list>
     </option>
   </component>
@@ -186,7 +190,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,6 +216,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,18 +320,19 @@
       <workItem from="1563053473573" duration="603000" />
       <workItem from="1563115451810" duration="3141000" />
       <workItem from="1563130824800" duration="8921000" />
-      <workItem from="1563235466945" duration="9883000" />
+      <workItem from="1563235466945" duration="11124000" />
+      <workItem from="1563275105323" duration="4063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123912000" />
+    <option name="totallyTimeSpent" value="129216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19189766" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -348,7 +353,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.16897655" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.16897655" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,16 +519,6 @@
     <entry file="file://$PROJECT_DIR$/usuarios/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/connectedin/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
-          <folding>
-            <element signature="e#635#667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/perfis/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -594,36 +589,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_post">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="8c4daa8e-7bc0-40ae-b3c6-c6479fbbef2e">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/perfis/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/perfis/templates/update_foto_perfil.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="87" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -692,21 +661,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/perfis/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="1156">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/perfis/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+        <state relative-caret-position="432">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding>
-            <element signature="e#94#121#0#HTML" expanded="true" />
-            <element signature="e#1873#1900#0#HTML" expanded="true" />
+            <element signature="e#2468#2475#0#HTML" expanded="true" />
+            <element signature="e#2916#2923#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connectedin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="39" column="86" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="86" />
+          <folding>
+            <element signature="e#635#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_post">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7a4f82c1-aa50-4b1f-81de-8853031ae021">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perfis/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="123" column="26" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

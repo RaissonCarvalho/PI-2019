@@ -4,14 +4,24 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from perfis.forms import ProfilePhotoForm, NovoPostForm
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 @login_required()
 def index(request):
     perfil_logado = request.user.perfil
     timeline_my_posts = perfil_logado.my_timeline.exibicao()
+    page = request.GET.get('page', 1)
 
-    return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'timeline_my_posts': timeline_my_posts})
+    paginator = Paginator(timeline_my_posts, 5)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'posts': posts})
 
 
 @login_required()
@@ -106,3 +116,9 @@ def novo_post(request):
         return redirect('index')
 
     return render(request, 'novo_post.html', {'form': form, 'perfil_logado': perfil_logado})
+
+def excluir_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    post.excluir_post()
+
+    return redirect('index')

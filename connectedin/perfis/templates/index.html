@@ -34,13 +34,10 @@
                 <strong>Timeline</strong>
             </div>
             <div>
-                {% if timeline_my_posts %}
-                    {% for post in timeline_my_posts %}
+                {% if posts %}
+                    {% for post in posts %}
                         <div class="card card-body">
                             <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
-                            {% if perfil_logado == post.perfil %}
-                                <a href="#">Excluir post</a><hr/>
-                            {% endif %}
                             {% if post.foto %}
                                 {{ post.texto }}
                                 <img src="{{ post.foto.url }}">
@@ -48,9 +45,26 @@
                                 {{ post.texto }}
                             {% endif %}
                         </div>
+                        {% if perfil_logado == post.perfil %}
+                            <a href="{% url 'exluir_post' post.id %}">Excluir post</a><hr/>
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
-                <a href="{% url 'novo_post' %}">Novo post</a>
+                <a href="{% url 'novo_post' %}" class="text-center">Novo post</a>
+                <div class="pagination text-center">
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                            <a href="?page=1">&laquo; Primeira página</a>
+                        {% endif %}
+                        <span class="current">
+                            Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+                        </span>
+                        {% if posts.has_next %}
+                            <a href="?page={{ posts.next_page_number }}">Próxima</a>
+                            <a href="?page={{ posts.paginator.num_pages }}">Ultima &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
             </div>
         </div>
     </div>

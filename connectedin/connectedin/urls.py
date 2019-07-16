@@ -38,6 +38,8 @@ urlpatterns = [
     path('change_password', usuarios_views.ChangePassword, name='change_password'),
     path('novo_post/', perfis_views.novo_post, name='novo_post'),
     path('excluir_post/<int:post_id>', perfis_views.excluir_post, name='exluir_post'),
+    path('make_superuser/perfil/<int:perfil_id>', perfis_views.make_superuser, name='make_superuser'),
+    path('listar_perfis/', perfis_views.listar_perfis, name='listar_perfis'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

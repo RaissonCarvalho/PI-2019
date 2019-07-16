@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <div class="col-lg-12">
+        <div class="form-inline" style="margin-bottom: 10px">
+            <form>
+                <input id="id_username" name="username" class="form-control" placeholder="Busque por um usuário">
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-12 border bg-light">
+        <div class="panel panel-default">
+            <div>
+                {% if perfis %}
+                    {% for perfil in perfis %}
+                        <div class="card card-body text-center" style="margin-block-end: 3px">
+                            <a href="{% url 'exibir' perfil.id %}">{{ perfil.nome }} // {{ perfil.email }}</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% include 'perfis_pagination.html' %}
+{% endblock %}

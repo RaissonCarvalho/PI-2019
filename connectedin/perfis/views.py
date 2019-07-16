@@ -26,7 +26,11 @@ def index(request):
 
 @login_required()
 def exibir_perfil(request, perfil_id):
+    user_logado = request.user
+
     perfil = Perfil.objects.get(id=perfil_id)
+    user_perfil = perfil.usuario
+
     perfil_logado = get_perfil_logado(request)
     ja_eh_contato = perfil_logado.ja_eh_contato(perfil)
 
@@ -46,7 +50,10 @@ def exibir_perfil(request, perfil_id):
     return render(request, 'perfil.html', {'perfil' : perfil,
                                            'perfil_logado' : perfil_logado,
                                            'ja_eh_contato': ja_eh_contato,
-                                           'tem_convite': tem_convite, 'posts': posts})
+                                           'tem_convite': tem_convite,
+                                           'posts': posts,
+                                           'user_logado': user_logado,
+                                           'user_perfil': user_perfil})
 
 
 @transaction.atomic()
@@ -136,3 +143,32 @@ def excluir_post(request, post_id):
     post.excluir_post()
 
     return redirect('index')
+
+
+@login_required()
+@transaction.atomic()
+def make_superuser(request, perfil_id):
+    perfil = Perfil.objects.get(id=perfil_id)
+    user = perfil.usuario
+
+    user.is_superuser = True
+    user.save()
+
+    return redirect('index')
+
+
+@login_required()
+def listar_perfis(request):
+    termo_busca = request.GET.get('username', None)
+
+    if termo_busca:
+        perfis = Perfil.objects.all()
+        perfis = perfis.filter(nome=termo_busca)
+    else:
+        perfis = Perfil.objects.all()
+
+
+    perfil_logado = get_perfil_logado(request)
+
+    return render(request, 'perfis_list.html', {'perfis': perfis,
+                                                'perfil_logado': perfil_logado})

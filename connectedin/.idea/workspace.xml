@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f548ed05-c14d-46de-9f97-7f9c1bbed95b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connectedin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/connectedin/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perfis/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/templates/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/posts_pagination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perfis/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfis/templates/perfis_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfis/templates/perfis_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perfis/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+            <state relative-caret-position="374">
+              <caret line="43" column="65" lean-forward="true" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
               <folding>
                 <element signature="e#71#98#0#HTML" expanded="true" />
                 <element signature="e#94#121#0#HTML" expanded="true" />
@@ -68,6 +65,17 @@
                 <element signature="e#2478#2505#0#HTML" expanded="true" />
                 <element signature="e#3600#3627#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/auth_user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -84,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/perfis/templates/perfis_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="425">
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
               <folding>
                 <element signature="e#105#132#0#HTML" expanded="true" />
                 <element signature="e#417#446#0#HTML" expanded="true" />
@@ -95,13 +103,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/perfis/templates/base.html">
+        <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -115,23 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connectedin/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="41" column="77" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="77" />
-              <folding>
-                <element signature="e#635#667#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/perfis/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="165" column="48" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
+            <state relative-caret-position="17">
+              <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -188,19 +181,19 @@
         <option value="$PROJECT_DIR$/usuarios/templates/change_password.html" />
         <option value="$PROJECT_DIR$/perfis/forms.py" />
         <option value="$PROJECT_DIR$/perfis/static/styles/main.css" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/usuarios/views.py" />
         <option value="$PROJECT_DIR$/perfis/templates/novo_post.html" />
         <option value="$PROJECT_DIR$/perfis/templates/pagination.html" />
         <option value="$PROJECT_DIR$/perfis/models.py" />
-        <option value="$PROJECT_DIR$/perfis/templates/perfil.html" />
         <option value="$PROJECT_DIR$/connectedin/urls.py" />
         <option value="$PROJECT_DIR$/perfis/templates/base.html" />
-        <option value="$PROJECT_DIR$/perfis/templates/index.html" />
         <option value="$PROJECT_DIR$/perfis/templates/update_foto_perfil.html" />
-        <option value="$PROJECT_DIR$/perfis/templates/perfis_list.html" />
         <option value="$PROJECT_DIR$/perfis/templates/perfis_pagination.html" />
         <option value="$PROJECT_DIR$/perfis/views.py" />
+        <option value="$PROJECT_DIR$/perfis/templates/perfis_list.html" />
+        <option value="$PROJECT_DIR$/perfis/templates/perfil.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/perfis/templates/index.html" />
       </list>
     </option>
   </component>
@@ -368,15 +361,16 @@
       <workItem from="1563130824800" duration="8921000" />
       <workItem from="1563235466945" duration="11124000" />
       <workItem from="1563275105323" duration="7287000" />
-      <workItem from="1563283634376" duration="17557000" />
+      <workItem from="1563283634376" duration="20833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149997000" />
+    <option name="totallyTimeSpent" value="153273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19402985" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -390,7 +384,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25568798" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25568798" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
@@ -399,7 +393,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.16950959" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.16950959" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19189766" />
@@ -633,15 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_timeline">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_post">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
@@ -661,43 +646,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_perfil">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/usuarios/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
-          <folding>
-            <element signature="e#161#181#0#HTML" expanded="true" />
-            <element signature="e#1945#1969#0#HTML" expanded="true" />
-            <element signature="e#1928#1952#0#HTML" expanded="true" />
-            <element signature="e#2475#2498#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,22 +672,6 @@
           <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/perfis/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
-          <folding>
-            <element signature="e#71#98#0#HTML" expanded="true" />
-            <element signature="e#94#121#0#HTML" expanded="true" />
-            <element signature="e#1031#1058#0#HTML" expanded="true" />
-            <element signature="e#1724#1751#0#HTML" expanded="true" />
-            <element signature="e#2523#2547#0#HTML" expanded="true" />
-            <element signature="e#2478#2505#0#HTML" expanded="true" />
-            <element signature="e#3600#3627#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,17 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/perfis/templates/perfis_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#105#132#0#HTML" expanded="true" />
-            <element signature="e#417#446#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/perfis/templates/perfis_pagination.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -791,10 +718,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/perfis/templates/perfis_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="e#105#132#0#HTML" expanded="true" />
+            <element signature="e#417#446#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perfis/templates/perfil.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_perfil">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/perfis_timeline">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perfis/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="43" column="65" lean-forward="true" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+          <folding>
+            <element signature="e#71#98#0#HTML" expanded="true" />
+            <element signature="e#94#121#0#HTML" expanded="true" />
+            <element signature="e#1031#1058#0#HTML" expanded="true" />
+            <element signature="e#1724#1751#0#HTML" expanded="true" />
+            <element signature="e#2523#2547#0#HTML" expanded="true" />
+            <element signature="e#2478#2505#0#HTML" expanded="true" />
+            <element signature="e#3600#3627#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2ff038d5-84c5-40ce-afac-e14b84b6285b/schema/main/table/auth_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="cb1d1355-c04b-434b-a167-6d6f7d5788af">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/perfis/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="165" column="48" selection-start-line="165" selection-start-column="48" selection-end-line="165" selection-end-column="48" />
+        <state relative-caret-position="17">
+          <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

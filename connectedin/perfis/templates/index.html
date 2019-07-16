@@ -45,8 +45,8 @@
                         <div class="card card-body" style="margin-bottom: 10px">
                             <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
                             {% if post.foto %}
-                                {{ post.texto }}
-                                <img src="{{ post.foto.url }}"><br/>
+                                {{ post.texto }}<hr/>
+                                <img class="card-img" src="{{ post.foto.url }}" width="400 px"><br/>
                             {% else %}
                                 {{ post.texto }}<br/>
                             {% endif %}

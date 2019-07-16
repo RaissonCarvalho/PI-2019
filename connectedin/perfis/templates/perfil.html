@@ -46,7 +46,7 @@
                 <div class="card card-body">
                     <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
                     {% if post.foto %}
-                        {{ post.texto }}
+                        {{ post.texto }}<hr/>
                         <img src="{{ post.foto.url }}">
                     {% else %}
                         {{ post.texto }}

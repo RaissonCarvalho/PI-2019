@@ -39,13 +39,14 @@
             <div>
                 {% if posts %}
                     {% for post in posts %}
+                        <p class="text-muted">{{ post.data }}</p>
                         <div class="card card-body">
                             <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
                             {% if post.foto %}
                                 {{ post.texto }}
-                                <img src="{{ post.foto.url }}">
+                                <img src="{{ post.foto.url }}"><br/>
                             {% else %}
-                                {{ post.texto }}
+                                {{ post.texto }}<br/>
                             {% endif %}
                         </div>
                         {% if perfil_logado == post.perfil %}
@@ -54,7 +55,7 @@
                         <hr/>
                     {% endfor %}
                 {% endif %}
-                <p class="text-center" style="margin-top: 30px"><a href="{% url 'novo_post' %}">Novo post</a></p>
+                <p class="text-center" style="margin-top: 30px"><a class="btn btn-primary" href="{% url 'novo_post' %}">Novo post</a></p>
             </div>
         {% include 'pagination.html' %}
         </div>
@@ -86,69 +87,4 @@
             {% endif %}
         </div>
     </div>
-
-{#    <div class="col-lg-4" style="background: #b9bbbe">#}
-{#        <div class="panel panel-default">#}
-{#            <div class="panel-heading">#}
-{#                <strong>Todos os Perfis</strong>#}
-{#            </div>#}
-{#            {% if perfis %}#}
-{#                <ul>#}
-{#                    {% for perfil in perfis %}#}
-{#                        {% if perfil.usuario.is_active %}#}
-{#                            <li>#}
-{#                                <a href="{% url 'exibir' perfil.id %}">#}
-{#                                    {{ perfil.nome }}#}
-{#                                </a> / {{ perfil.email }}#}
-{#                            </li>#}
-{#                        {% endif %}#}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#            {% else %}#}
-{#                <p>Nenhum Perfil encontrado</p>#}
-{#            {% endif %}#}
-{#        </div>#}
-{#        <div class="panel panel-default">#}
-{#            {% if perfil_logado.convites_recebidos.count %}#}
-{#                <div class="panel-heading">#}
-{#                    <strong>Você tem {{ perfil_logado.convites_recebidos.count }} convite{{ perfil_logado.convites_recebidos.count|pluralize }} aguardando aprovação</strong>#}
-{#                </div>#}
-{#                <ul class="list-group">#}
-{#                    {% for convite in perfil_logado.convites_recebidos.all %}#}
-{#                        <li class="list-group-item">#}
-{#                            {{ convite.solicitante.nome }}#}
-{#                            <div class="pull-right">#}
-{#                                <a href="{% url 'aceitar' convite.id %}" class="btn btn-success" role="button">Aceitar</a>#}
-{#                                <a href="{% url 'recusar' convite.id %}" class="btn btn-danger" role="button">Recusar</a>#}
-{#                            </div>#}
-{#                        </li>#}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#            {% else %}#}
-{#                <div class="panel-body">#}
-{#                    <p>Nenhum convite recebido</p>#}
-{#                </div>#}
-{#            {% endif %}#}
-{#        </div>#}
-{#        <div class="panel panel-default">#}
-{#            {% with total_de_contatos=perfil_logado.contatos.count %}#}
-{#                {% if total_de_contatos %}#}
-{#                    <div class="panel-heading">#}
-{#                        <strong>Voce tem {{ total_de_contatos }} contato{{ total_de_contatos|pluralize }}</strong>#}
-{#                    </div>#}
-{#                    {% for contato in perfil_logado.contatos.all %}#}
-{#                        {% if contato.usuario.is_active %}#}
-{#                            <ul class="list-group">#}
-{#                                <a href="{% url 'exibir' contato.id%}" class="list-group-item">{{ contato.nome }} // {{ contato.email }}</a>#}
-{#                            </ul>#}
-{#                        {% endif %}#}
-{#                    {% endfor %}#}
-{#                {% else %}#}
-{#                    <div class="panel-body">#}
-{#                        <p>Você não possui contatos no momento</p>#}
-{#                    </div>#}
-{#                {% endif %}#}
-{#            {% endwith %}#}
-{#        </div>#}
-{#    </div>#}
 {% endblock %}

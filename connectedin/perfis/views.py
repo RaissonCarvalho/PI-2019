@@ -32,10 +32,10 @@ def exibir_perfil(request, perfil_id):
 
     tem_convite = perfil.tem_convite(perfil_logado)
 
-    timeline_my_posts = perfil.get_perfil_posts()
+    perfil_posts = perfil.get_perfil_posts()
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(timeline_my_posts, 5)
+    paginator = Paginator(perfil_posts, 5)
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:

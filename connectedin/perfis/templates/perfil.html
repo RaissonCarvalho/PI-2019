@@ -36,6 +36,7 @@
         <div>
             {% if posts %}
                 {% for post in posts %}
+                    <p class="text-muted" style="margin-top: 30px">{{ post.data }}</p>
                     <div class="card card-body">
                         <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
                         {% if post.foto %}
@@ -51,7 +52,7 @@
                 {% endfor %}
             {% endif %}
             {% if perfil_logado == perfil %}
-                <p class="text-center"><a href="{% url 'novo_post' %}">Novo post</a></p>
+                <p class="text-center"><a class="btn btn-primary" href="{% url 'novo_post' %}">Novo post</a></p>
             {% endif %}
         </div>
         {% include 'pagination.html' %}

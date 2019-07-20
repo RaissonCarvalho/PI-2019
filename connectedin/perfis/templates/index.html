@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 
 {% block body %}
+    <div class="col-lg-12">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="" role="alert">
+                    <center>{{ message }}</center>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <div class="col-lg-12" style="margin-bottom: 10px">
         <a class="btn btn-primary" href="{% url 'listar_perfis' %}">Pesquisar usuário</a>
     </div>

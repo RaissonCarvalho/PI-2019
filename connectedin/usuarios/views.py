@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.base import View
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
 
 
 class RegistrarUsuarioView(View):
@@ -49,6 +50,7 @@ def ChangePassword(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
+            messages.success(request, 'Nova senha cadastrada')
             return redirect('index')
 
     if request.method == 'GET':

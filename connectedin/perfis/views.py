@@ -5,10 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from perfis.forms import ProfilePhotoForm, NovoPostForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib import messages
 
 
 @login_required()
 def index(request):
+    storage = messages.get_messages(request)
     perfil_logado = request.user.perfil
     timeline_my_posts = perfil_logado.my_timeline.exibicao()
     page = request.GET.get('page', 1)
@@ -21,7 +23,7 @@ def index(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'posts': posts})
+    return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'posts': posts, 'messages': storage})
 
 
 @login_required()
@@ -115,6 +117,7 @@ def MudarFotoPerfil(request):
     form = ProfilePhotoForm(request.POST or None, request.FILES or None, instance=perfil)
     if form.is_valid():
         form.save()
+        messages.success(request, 'Nova foto de perfil salva')
         return redirect('index')
 
     return render(request, 'update_foto_perfil.html', {'form':form})
@@ -131,6 +134,7 @@ def novo_post(request):
                     perfil=perfil_logado,
                     foto=dados_form['foto'])
         post.save()
+        messages.success(request, 'Post adicionado com sucesso')
         return redirect('index')
 
     return render(request, 'novo_post.html', {'form': form, 'perfil_logado': perfil_logado})
@@ -141,7 +145,7 @@ def novo_post(request):
 def excluir_post(request, post_id):
     post = Post.objects.get(id=post_id)
     post.excluir_post()
-
+    messages.success(request, 'Post deletado com sucesso')
     return redirect('index')
 
 
@@ -153,7 +157,7 @@ def make_superuser(request, perfil_id):
 
     user.is_superuser = True
     user.save()
-
+    messages.success(request, 'Novo superusuário cadastrado')
     return redirect('index')
 
 

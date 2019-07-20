@@ -24,7 +24,7 @@
                         <div class="well well-sm">Vocês estão conectados!</div>
                         <a href="{% url 'desfazer_amizade' perfil.id %}" class="btn btn-danger" role="button">Desfazer amizade</a>
                     {% elif tem_convite %}
-                        <a class="btn btn-primary" >Aguardando aprovação</a>
+                        <a class="btn btn-outline-danger" href="{% url 'cancelar_solicitacao' perfil.id %}">Cancelar solicitacao</a>
                     {% else %}
                         <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
                 {% endif %}
@@ -53,7 +53,7 @@
                     {% endif %}
                 </div>
                 {% if perfil_logado == post.perfil or user.is_superuser %}
-                    <a class="btn btn-danger" href="{% url 'exluir_post' post.id %}" style="margin-top: 5px">Excluir post</a><hr/>
+                    <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}" style="margin-top: 5px">Excluir post</a><hr/>
                 {% endif %}
             {% endfor %}
     {% endif %}

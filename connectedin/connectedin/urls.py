@@ -40,6 +40,7 @@ urlpatterns = [
     path('excluir_post/<int:post_id>', perfis_views.excluir_post, name='exluir_post'),
     path('make_superuser/perfil/<int:perfil_id>', perfis_views.make_superuser, name='make_superuser'),
     path('listar_perfis/', perfis_views.listar_perfis, name='listar_perfis'),
+    path('cancelar_solicitacao/<int:perfil_id>', perfis_views.cancelar_solicitacao, name='cancelar_solicitacao'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

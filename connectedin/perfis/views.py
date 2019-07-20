@@ -176,3 +176,11 @@ def listar_perfis(request):
 
     return render(request, 'perfis_list.html', {'perfis': perfis,
                                                 'perfil_logado': perfil_logado})
+
+
+def cancelar_solicitacao(request, perfil_id):
+    perfil_convidado = Perfil.objects.get(id=perfil_id)
+    convite = Convite.objects.get(solicitante=get_perfil_logado(request), convidado=perfil_convidado)
+    convite.delete()
+
+    return redirect('index')

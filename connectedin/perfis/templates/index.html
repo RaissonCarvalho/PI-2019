@@ -61,7 +61,7 @@
                             {% endif %}
                         </div>
                         {% if perfil_logado == post.perfil %}
-                            <a class="btn btn-danger" href="{% url 'exluir_post' post.id %}">Excluir post</a>
+                            <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}">Excluir post</a>
                         {% endif %}
                         <hr/>
                     {% endfor %}

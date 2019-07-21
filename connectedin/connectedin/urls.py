@@ -21,9 +21,13 @@ from perfis import views as perfis_views
 from usuarios import views as usuarios_views
 from django.contrib.auth import views as v
 from usuarios.views import RegistrarUsuarioView
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns += i18n_patterns(
     path('', perfis_views.index,name='index'),
     path('perfil/<int:perfil_id>', perfis_views.exibir_perfil, name='exibir'),
     path('perfil/<int:perfil_id>/convidar',perfis_views.convidar, name='convidar'),
@@ -42,5 +46,5 @@ urlpatterns = [
     path('listar_perfis/', perfis_views.listar_perfis, name='listar_perfis'),
     path('cancelar_solicitacao/<int:perfil_id>', perfis_views.cancelar_solicitacao, name='cancelar_solicitacao'),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

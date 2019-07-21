@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-20 23:07-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\perfis\templates\base.html:19
+msgid "Sair"
+msgstr "Logout"
+
+#: .\perfis\templates\index.html:14
+msgid "Pesquisar usuário"
+msgstr "Search for user"
+
+#: .\perfis\templates\index.html:21
+msgid "Amigos"
+msgstr "Friends"
+
+#: .\perfis\templates\index.html:37
+msgid "Sem Amigos"
+msgstr "No friends"
+
+#: .\perfis\templates\index.html:64
+msgid "Excluir post"
+msgstr "Delete post"
+
+#: .\perfis\templates\index.html:69
+msgid "Novo post"
+msgstr "New post"
+
+#: .\perfis\templates\index.html:80
+msgid "Você tem"
+msgstr "You have"
+
+#: .\perfis\templates\index.html:81
+msgid "convite"
+msgstr "invitations"
+
+#: .\perfis\templates\index.html:82
+msgid "aguardando aprovação"
+msgstr "waiting for approvement"
+
+#: .\perfis\templates\index.html:90
+msgid "Aceitar"
+msgstr "Acept"
+
+#: .\perfis\templates\index.html:91
+msgid "Recusar"
+msgstr "Refuse"
+
+#: .\perfis\templates\index.html:99
+msgid "Sem Convites"
+msgstr "No invitations"
+
+#: .\perfis\templates\novo_post.html:4
+#, fuzzy
+#| msgid "Novo post"
+msgid "Novo Post"
+msgstr "New Post"
+
+#: .\perfis\templates\novo_post.html:9
+msgid "Postar"
+msgstr "Post"
+
+#: .\perfis\templates\perfis_list.html:8
+#, fuzzy
+msgid "Pesquisar usuário"
+msgstr "Search user"
+
+#: .\perfis\templates\perfis_list.html:9
+#, fuzzy
+#| msgid "Pesquisar usuário"
+msgid "Pesquisar"
+msgstr "Search"

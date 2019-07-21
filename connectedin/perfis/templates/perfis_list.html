@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block body %}
 
     <div class="col-lg-12">
         <div class="form-inline" style="margin-bottom: 10px">
             <form>
-                <input id="id_username" name="username" class="form-control" placeholder="Busque por um usuário">
-                <button type="submit" class="btn btn-primary">Pesquisar</button>
+                <input id="id_username" name="username" class="form-control" placeholder="{% trans 'Busque por um usuário' %}">
+                <button type="submit" class="btn btn-primary">{% trans "Pesquisar" %}</button>
             </form>
         </div>
     </div>

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 {% block body %}
     <div class="col-lg-12">
         {% if messages %}
@@ -11,14 +11,14 @@
         {% endif %}
     </div>
     <div class="col-lg-12" style="margin-bottom: 10px">
-        <a class="btn btn-primary" href="{% url 'listar_perfis' %}">Pesquisar usuário</a>
+        <a class="btn btn-primary" href="{% url 'listar_perfis' %}">{% trans "Pesquisar usuário" %}</a>
     </div>
     <div class="col-3">
         <div class="card" style="background: #b8daff">
             {% with total_de_contatos=perfil_logado.contatos.count %}
                 {% if total_de_contatos %}
                     <div class="card-header text-center">
-                        <strong>Amigos</strong>
+                        <strong>{% trans "Amigos" %}</strong>
                     </div>
                     {% for contato in perfil_logado.contatos.all %}
                         {% if contato.usuario.is_active %}
@@ -34,7 +34,7 @@
                 {% else %}
                     <div class="card" style="background: #ffffff">
                         <div class="card-header text-center">
-                            <strong>Sem Amigos</strong>
+                            <strong>{% trans "Sem Amigos" %}</strong>
                         </div>
                     </div>
                 {% endif %}
@@ -61,12 +61,12 @@
                             {% endif %}
                         </div>
                         {% if perfil_logado == post.perfil %}
-                            <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}">Excluir post</a>
+                            <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}">{% trans "Excluir post" %}</a>
                         {% endif %}
                         <hr/>
                     {% endfor %}
                 {% endif %}
-                <p class="text-center" style="margin-top: 30px"><a class="btn btn-primary" href="{% url 'novo_post' %}">Novo post</a></p>
+                <p class="text-center" style="margin-top: 30px"><a class="btn btn-primary" href="{% url 'novo_post' %}">{% trans "Novo post" %}</a></p>
             </div>
         {% include 'posts_pagination.html' %}
         </div>
@@ -76,15 +76,19 @@
         <div class="card" style="background: #b8daff">
             {% if perfil_logado.convites_recebidos.count %}
                 <div class="card-header text-center">
-                    <strong>Você tem {{ perfil_logado.convites_recebidos.count }} convite{{ perfil_logado.convites_recebidos.count|pluralize }} aguardando aprovação</strong>
+                    <strong>
+                        {% trans "Você tem" %} {{ perfil_logado.convites_recebidos.count }}
+                        {% trans "convite" %}{{ perfil_logado.convites_recebidos.count|pluralize }}
+                        {% trans "aguardando aprovação" %}
+                    </strong>
                 </div>
                 <ul class="list-group">
                     {% for convite in perfil_logado.convites_recebidos.all %}
                         <li class="list-group-item list-group-flush">
                             {{ convite.solicitante.nome }}
                             <div class="float-right">
-                                <a href="{% url 'aceitar' convite.id %}" class="btn btn-success" role="button">Aceitar</a>
-                                <a href="{% url 'recusar' convite.id %}" class="btn btn-danger" role="button">Recusar</a>
+                                <a href="{% url 'aceitar' convite.id %}" class="btn btn-success" role="button">{% trans "Aceitar" %}</a>
+                                <a href="{% url 'recusar' convite.id %}" class="btn btn-danger" role="button">{% trans "Recusar" %}</a>
                             </div>
                         </li>
                     {% endfor %}
@@ -92,7 +96,7 @@
             {% else %}
                <div class="card" style="background: #ffffff">
                    <div class="card-header text-center">
-                       <strong>Sem Convites</strong>
+                       <strong>{% trans "Sem Convites" %}</strong>
                    </div>
                </div>
             {% endif %}

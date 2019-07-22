@@ -6,8 +6,10 @@ class Perfil(models.Model):
     nome = models.CharField(max_length=255, null=False)
     telefone = models.CharField(max_length=20, null= False)
     nome_empresa = models.CharField(max_length=255, null=False)
-    contatos = models.ManyToManyField('Perfil')
+    contatos = models.ManyToManyField('Perfil', related_name='meus_contatos')
     photo = models.ImageField(upload_to='profile_photo', blank=True, default='default_photo.png')
+
+    perfis_bloqueados = models.ManyToManyField('Perfil', related_name='contatos_bloqueados')
 
     usuario = models.OneToOneField(User, related_name='perfil', on_delete=models.CASCADE, null=True)
 
@@ -41,6 +43,11 @@ class Perfil(models.Model):
         posts = Post.objects.filter(perfil=self).order_by('-data')
         return posts
 
+    def bloquear_contato(self, perfil):
+        self.contatos_bloqueados.add(perfil)
+
+    def desbloquear_contato(self, perfil):
+        self.contatos_bloqueados.remove(perfil)
 
 class Convite(models.Model):
     solicitante = models.ForeignKey(Perfil,

@@ -177,10 +177,22 @@ def listar_perfis(request):
     return render(request, 'perfis_list.html', {'perfis': perfis,
                                                 'perfil_logado': perfil_logado})
 
-
+@login_required()
+@transaction.atomic()
 def cancelar_solicitacao(request, perfil_id):
     perfil_convidado = Perfil.objects.get(id=perfil_id)
     convite = Convite.objects.get(solicitante=get_perfil_logado(request), convidado=perfil_convidado)
     convite.delete()
+
+    return redirect('index')
+
+
+@login_required()
+@transaction.atomic()
+def bloquear_contato(request, perfil_id):
+    perfil = Perfil.objects.get(id=perfil_id)
+
+    perfil_logado = get_perfil_logado(request)
+    perfil_logado.bloquear_contato(perfil)
 
     return redirect('index')

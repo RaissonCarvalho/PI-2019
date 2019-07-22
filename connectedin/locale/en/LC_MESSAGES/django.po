@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-20 23:07-0300\n"
+"POT-Creation-Date: 2019-07-21 08:56-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Sair"
 msgstr "Logout"
 
-#: .\perfis\templates\index.html:14
+#: .\perfis\templates\index.html:14 .\perfis\templates\perfis_list.html:8
 msgid "Pesquisar usuário"
 msgstr "Search for user"
 
@@ -39,7 +39,7 @@ msgid "Excluir post"
 msgstr "Delete post"
 
 #: .\perfis\templates\index.html:69
-msgid "Novo post"
+msgid "Nova publicação"
 msgstr "New post"
 
 #: .\perfis\templates\index.html:80
@@ -75,11 +75,6 @@ msgstr "New Post"
 #: .\perfis\templates\novo_post.html:9
 msgid "Postar"
 msgstr "Post"
-
-#: .\perfis\templates\perfis_list.html:8
-#, fuzzy
-msgid "Pesquisar usuário"
-msgstr "Search user"
 
 #: .\perfis\templates\perfis_list.html:9
 #, fuzzy

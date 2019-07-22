@@ -4,15 +4,18 @@
     <div class="col-lg-12">
         {% if messages %}
             {% for message in messages %}
-                <div class="" role="alert">
+                <div class="alert alert-info" role="alert">
                     <center>{{ message }}</center>
                 </div>
             {% endfor %}
         {% endif %}
     </div>
+
     <div class="col-lg-12" style="margin-bottom: 10px">
         <a class="btn btn-primary" href="{% url 'listar_perfis' %}">{% trans "Pesquisar usuário" %}</a>
+        <a class="btn btn-primary float-lg-right" href="{% url 'novo_post' %}">{% trans "Nova publicação" %}</a>
     </div>
+
     <div class="col-3">
         <div class="card" style="background: #b8daff">
             {% with total_de_contatos=perfil_logado.contatos.count %}
@@ -66,7 +69,6 @@
                         <hr/>
                     {% endfor %}
                 {% endif %}
-                <p class="text-center" style="margin-top: 30px"><a class="btn btn-primary" href="{% url 'novo_post' %}">{% trans "Novo post" %}</a></p>
             </div>
         {% include 'posts_pagination.html' %}
         </div>
@@ -102,4 +104,7 @@
             {% endif %}
         </div>
     </div>
+
+
+
 {% endblock %}

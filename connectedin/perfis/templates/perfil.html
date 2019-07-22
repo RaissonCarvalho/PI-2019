@@ -26,7 +26,10 @@
                     {% elif tem_convite %}
                         <a class="btn btn-outline-danger" href="{% url 'cancelar_solicitacao' perfil.id %}">Cancelar solicitacao</a>
                     {% else %}
-                        <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
+                        {% if perfil_logado in perfil.perfis_bloqueados.all %}
+                        {% else %}
+                            <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
+                        {% endif %}
                 {% endif %}
             {% endif %}
             {% if user_logado.is_superuser and not user_perfil.is_superuser%}
@@ -39,26 +42,32 @@
         </div>
     </div>
 
-    {% if posts %}
-        <div class="col-lg-6 border bg-light">
-            {% for post in posts %}
-                <p class="text-muted" style="margin-top: 30px">{{ post.data }}</p>
-                <div class="card card-body">
-                    <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
-                    {% if post.foto %}
-                        {{ post.texto }}<hr/>
-                        <img src="{{ post.foto.url }}">
-                    {% else %}
-                        {{ post.texto }}
+    {% if perfil_logado in perfil.perfis_bloqueados.all %}
+        <div class="col-6">
+            <h1>Não é possível ver timeline. Este perfil bloqueou você</h1>
+        </div>
+    {% else %}
+        {% if posts %}
+            <div class="col-lg-6 border bg-light">
+                {% for post in posts %}
+                    <p class="text-muted" style="margin-top: 30px">{{ post.data }}</p>
+                    <div class="card card-body">
+                        <a href="{% url 'exibir' post.perfil.id %}">{{ post.perfil.nome }}</a>
+                        {% if post.foto %}
+                            {{ post.texto }}<hr/>
+                            <img src="{{ post.foto.url }}">
+                        {% else %}
+                            {{ post.texto }}
+                        {% endif %}
+                    </div>
+                    {% if perfil_logado == post.perfil or user.is_superuser %}
+                        <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}" style="margin-top: 5px">Excluir post</a><hr/>
                     {% endif %}
-                </div>
-                {% if perfil_logado == post.perfil or user.is_superuser %}
-                    <a class="btn btn-outline-danger" href="{% url 'exluir_post' post.id %}" style="margin-top: 5px">Excluir post</a><hr/>
-                {% endif %}
-            {% endfor %}
+                {% endfor %}
+        {% endif %}
+        {% if perfil_logado == perfil %}
+            <p class="text-center"><a class="btn btn-primary" href="{% url 'novo_post' %}">Novo post</a></p>
+        {% endif %}
+        {% include 'posts_pagination.html' %}
     {% endif %}
-    {% if perfil_logado == perfil %}
-        <p class="text-center"><a class="btn btn-primary" href="{% url 'novo_post' %}">Novo post</a></p>
-    {% endif %}
-    {% include 'posts_pagination.html' %}
 {% endblock %}

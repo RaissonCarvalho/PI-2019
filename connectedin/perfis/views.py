@@ -3,15 +3,16 @@ from perfis.models import Perfil, Convite, Post, TimeLine
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
-from perfis.forms import ProfilePhotoForm, NovoPostForm
+from perfis.forms import ProfilePhotoForm, NovoPostForm, AtivarContaForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
+from perfis.models import *
 
 
 @login_required()
 def index(request):
     storage = messages.get_messages(request)
-    perfil_logado = request.user.perfil
+    perfil_logado = get_perfil_logado(request)
     timeline_my_posts = perfil_logado.my_timeline.exibicao()
     page = request.GET.get('page', 1)
 
@@ -23,7 +24,14 @@ def index(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'posts': posts, 'messages': storage})
+    if request.user.is_superuser:
+        perfis_ativos = User.objects.filter(is_active=True)
+        return render(request, 'superuser_index.html',
+                      {'perfis': perfis_ativos, 'perfil_logado': perfil_logado, 'posts': posts,
+                       'messages': storage})
+    else:
+        return render(request, 'index.html',{'perfis' : Perfil.objects.all(), 'perfil_logado' : perfil_logado, 'posts': posts, 'messages': storage})
+
 
 
 @login_required()
@@ -117,6 +125,22 @@ def desativar_perfil(request):
 
     return redirect('login')
 
+
+@transaction.atomic()
+def ativar_perfil(request):
+    if request.method == 'POST':
+        form = AtivarContaForm(request.POST)
+        if form.is_valid():
+            dados_form = form.cleaned_data
+            perfil = Perfil.objects.get(nome=dados_form['nome'])
+            perfil.usuario.is_active = True
+            perfil.usuario.save()
+
+            return redirect('index')
+
+    if request.method == 'GET':
+        form = AtivarContaForm()
+        return render(request, 'ativar_perfil.html', {'form': form})
 
 @login_required()
 @transaction.atomic

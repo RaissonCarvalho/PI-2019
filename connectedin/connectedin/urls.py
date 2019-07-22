@@ -38,6 +38,7 @@ urlpatterns += i18n_patterns(
     path('login/', v.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', v.LogoutView.as_view(template_name='login.html'), name='logout'),
     path('desativar_perfil/',perfis_views.desativar_perfil, name='desativar'),
+    path('ativar_perfil/', perfis_views.ativar_perfil, name='ativar'),
     path('update_photo/', perfis_views.MudarFotoPerfil, name='update_photo'),
     path('change_password', usuarios_views.ChangePassword, name='change_password'),
     path('novo_post/', perfis_views.novo_post, name='novo_post'),

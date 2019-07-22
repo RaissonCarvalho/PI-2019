@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block body %}
+    <div class="col-12 border bg-light">
+        <div class="panel panel-default">
+            <h3 class="text-center">Todos os Perfis</h3>
+            <div>
+                {% if perfis %}
+                    {% for perfil in perfis %}
+                        <div class="card card-body text-center" style="margin-block-end: 3px">
+                            <a href="{% url 'exibir' perfil.id %}">{{ perfil.perfil.nome }} // {{ perfil.email }}</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
     <div class="col-lg-12">
         {% if messages %}
             {% for message in messages %}
@@ -10,8 +25,7 @@
             {% endfor %}
         {% endif %}
     </div>
-
-    <div class="col-lg-12" style="margin-bottom: 10px">
+    <div class="col-lg-12" style="margin-bottom: 10px; margin-top: 10px">
         <a class="btn btn-primary" href="{% url 'listar_perfis' %}">{% trans "Pesquisar usuário" %}</a>
         <a class="btn btn-primary float-lg-right" href="{% url 'novo_post' %}">{% trans "Nova publicação" %}</a>
     </div>

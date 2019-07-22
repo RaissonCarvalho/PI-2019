@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-21 08:56-0300\n"
+"POT-Creation-Date: 2019-07-22 11:26-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,47 +22,49 @@ msgstr ""
 msgid "Sair"
 msgstr "Logout"
 
-#: .\perfis\templates\index.html:14 .\perfis\templates\perfis_list.html:8
+#: .\perfis\templates\index.html:15 .\perfis\templates\perfis_list.html:8
+#: .\perfis\templates\superuser_index.html:29
 msgid "Pesquisar usuário"
 msgstr "Search for user"
 
-#: .\perfis\templates\index.html:21
-msgid "Amigos"
-msgstr "Friends"
-
-#: .\perfis\templates\index.html:37
-msgid "Sem Amigos"
-msgstr "No friends"
-
-#: .\perfis\templates\index.html:64
-msgid "Excluir post"
-msgstr "Delete post"
-
-#: .\perfis\templates\index.html:69
+#: .\perfis\templates\index.html:16 .\perfis\templates\superuser_index.html:30
 msgid "Nova publicação"
 msgstr "New post"
 
-#: .\perfis\templates\index.html:80
+#: .\perfis\templates\index.html:24 .\perfis\templates\superuser_index.html:38
+msgid "Amigos"
+msgstr "Friends"
+
+#: .\perfis\templates\index.html:40 .\perfis\templates\superuser_index.html:54
+msgid "Sem Amigos"
+msgstr "No friends"
+
+#: .\perfis\templates\index.html:67 .\perfis\templates\superuser_index.html:81
+msgid "Excluir post"
+msgstr "Delete post"
+
+#: .\perfis\templates\index.html:82 .\perfis\templates\superuser_index.html:96
 msgid "Você tem"
 msgstr "You have"
 
-#: .\perfis\templates\index.html:81
+#: .\perfis\templates\index.html:83 .\perfis\templates\superuser_index.html:97
 msgid "convite"
 msgstr "invitations"
 
-#: .\perfis\templates\index.html:82
+#: .\perfis\templates\index.html:84 .\perfis\templates\superuser_index.html:98
 msgid "aguardando aprovação"
 msgstr "waiting for approvement"
 
-#: .\perfis\templates\index.html:90
+#: .\perfis\templates\index.html:92 .\perfis\templates\superuser_index.html:106
 msgid "Aceitar"
 msgstr "Acept"
 
-#: .\perfis\templates\index.html:91
+#: .\perfis\templates\index.html:93 .\perfis\templates\superuser_index.html:107
 msgid "Recusar"
 msgstr "Refuse"
 
-#: .\perfis\templates\index.html:99
+#: .\perfis\templates\index.html:101
+#: .\perfis\templates\superuser_index.html:115
 msgid "Sem Convites"
 msgstr "No invitations"
 
@@ -81,3 +83,7 @@ msgstr "Post"
 #| msgid "Pesquisar usuário"
 msgid "Pesquisar"
 msgstr "Search"
+
+#: .\perfis\templates\superuser_index.html:6
+msgid "Todos os Perfis"
+msgstr "All Profiles"

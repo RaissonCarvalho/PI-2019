@@ -46,6 +46,7 @@ urlpatterns += i18n_patterns(
     path('listar_perfis/', perfis_views.listar_perfis, name='listar_perfis'),
     path('cancelar_solicitacao/<int:perfil_id>', perfis_views.cancelar_solicitacao, name='cancelar_solicitacao'),
     path('bloquear_perfil/<int:perfil_id>', perfis_views.bloquear_contato, name='bloquear_contato'),
+    path('desbloquear_perfil/<int:perfil_id>', perfis_views.desbloquear_contato, name='desbloquear_contato'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

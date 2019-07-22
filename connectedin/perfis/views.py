@@ -65,6 +65,8 @@ def convidar(request,perfil_id):
     perfil_logado = get_perfil_logado(request)
     perfil_logado.convidar(perfil_a_convidar)
 
+    messages.success(request, 'Convite realizado. Aguardando aprovação.')
+
     return  redirect('index')
 
 
@@ -79,6 +81,8 @@ def aceitar(request, convite_id):
     convite = Convite.objects.get(id = convite_id)
     convite.aceitar()
 
+    messages.success(request, 'Convite aceito')
+
     return redirect('index')
 
 
@@ -88,6 +92,8 @@ def desfazer_amizade(request, perfil_id):
     perfil = Perfil.objects.get(id=perfil_id)
     perfil.desfazer_amizade(get_perfil_logado(request))
 
+    messages.success(request, 'Amizade desfeita')
+
     return redirect('index')
 
 
@@ -96,6 +102,8 @@ def desfazer_amizade(request, perfil_id):
 def recusar(request, convite_id):
     convite = Convite.objects.get(id=convite_id)
     convite.recusar()
+
+    messages.success(request, 'Convite recusado')
 
     return redirect('index')
 
@@ -184,6 +192,8 @@ def cancelar_solicitacao(request, perfil_id):
     convite = Convite.objects.get(solicitante=get_perfil_logado(request), convidado=perfil_convidado)
     convite.delete()
 
+    messages.success(request, 'Convite desfeito')
+
     return redirect('index')
 
 
@@ -194,5 +204,20 @@ def bloquear_contato(request, perfil_id):
 
     perfil_logado = get_perfil_logado(request)
     perfil_logado.bloquear_contato(perfil)
+
+    messages.success(request, 'Contato bloqueado')
+
+    return redirect('index')
+
+
+@login_required()
+@transaction.atomic()
+def desbloquear_contato(request, perfil_id):
+    perfil = Perfil.objects.get(id=perfil_id)
+
+    perfil_logado = get_perfil_logado(request)
+    perfil_logado.desbloquear_contato(perfil)
+
+    messages.success(request, 'Contato desbloqueado')
 
     return redirect('index')

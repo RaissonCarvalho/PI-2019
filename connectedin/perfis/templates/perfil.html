@@ -27,10 +27,15 @@
                         <a class="btn btn-outline-danger" href="{% url 'cancelar_solicitacao' perfil.id %}">Cancelar solicitacao</a>
                     {% else %}
                         {% if perfil_logado in perfil.perfis_bloqueados.all %}
+                            <a href="{% url 'desbloquear_contato' perfil.id %}" class="btn btn-primary" role="button">Desbloquear</a>
                         {% else %}
                             <a href="{% url 'convidar' perfil.id %}" class="btn btn-success" role="button">Convidar</a>
                         {% endif %}
-                {% endif %}
+                        {% if perfil_logado not in perfil.perfis_bloqueados.all and perfil != perfil_logado %}
+                            <a href="{% url 'bloquear_contato' perfil.id %}" class="btn btn-danger" role="button">Bloquear</a>
+                        {% endif %}
+                    {% endif %}
+
             {% endif %}
             {% if user_logado.is_superuser and not user_perfil.is_superuser%}
                 <a class="btn bg-light" href="{% url 'make_superuser' perfil.id %}">Tornar Superusuário</a>
@@ -42,9 +47,9 @@
         </div>
     </div>
 
-    {% if perfil_logado in perfil.perfis_bloqueados.all %}
+    {% if perfil in perfil_logado.perfis_bloqueados.all %}
         <div class="col-6">
-            <h1>Não é possível ver timeline. Este perfil bloqueou você</h1>
+            <h1>Não é possível ver timeline. Este perfil bloqueou você.</h1>
         </div>
     {% else %}
         {% if posts %}

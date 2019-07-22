@@ -8,7 +8,7 @@
                 {% if perfis %}
                     {% for perfil in perfis %}
                         <div class="card card-body text-center" style="margin-block-end: 3px">
-                            <a href="{% url 'exibir' perfil.id %}">{{ perfil.perfil.nome }} // {{ perfil.email }}</a>
+                            <a href="{% url 'exibir' perfil.perfil.id %}">{{ perfil.perfil.nome }} // {{ perfil.email }}</a>
                         </div>
                     {% endfor %}
                 {% else %}
